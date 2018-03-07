@@ -1,0 +1,139 @@
+<div *ngIf="!isHome">
+<div class="row createAccount">
+    <div class="col-md-12">
+        <h4 class="font">Create Account</h4>
+    </div>
+</div>
+<div class="row createAccount">
+    <div class="col-md-12 message">
+        We`ll send a text verification. Message and dara rates may apply.
+    </div>
+</div>
+<div style="margin-top: 2%;">
+    <form [formGroup]="myBlueForm">
+       <!-- Mobile Number ^(?:\([2-9]\d{2}\)\ ?|[2-9]\d{2}(?:\-?|\ ?))[2-9]\d{2}[- ]?\d{4}$-->
+    <div class="row col-sm-12 col-md-12 left-margin padding-top">
+      <b><label for="phoneNumber">Mobile Number<span class="mandate">* </span>(This will be your username)</label></b>
+    </div>
+    <div class="row col-sm-12 col-md-12">
+      <input type="text" id="phoneNumber" name="phoneNumber" formControlName="phoneNumber" class="form-control default-input-field-size left-margin-2em"
+        pattern="/^(1-?)?(\\([2-9]\\d{2}\\)|[2-9]\\d{2})-?[2-9]\\d{2}-?\\d{4}$/"
+         minlength="10" maxlength="12">
+        <div class="phoneNumber">000-000-0000 US Only</div>
+
+       <div [hidden]="myBlueForm.controls.phoneNumber.valid || myBlueForm.controls.phoneNumber.pristine" class="alertBox">
+        <div [hidden]="!myBlueForm.controls.phoneNumber.hasError('required')">Required field.</div>
+        <!--<div [hidden]="!myBlueForm.controls.phoneNumber.hasError('pattern')">Please enter Phone Number as NPANXXLINE or NPA-NXX-LINE.</div>-->
+      </div>
+    </div>
+    <div class="clearfix"></div>
+
+
+    <div class="row createAccount">
+        <div class="col-md-12 emailStyle">
+            Use email instead
+        </div>
+   </div>
+   <div class="clearfix"></div>
+    <!--Password  "/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/" -->
+    <div class="row col-sm-12 col-md-12 left-margin padding-top"  style="margin-top: 2%;">
+      <b><label for="psw">Password</label></b>
+    </div>
+    <div class="row col-sm-12 col-md-12">
+    <input type="password" id="psw" name="psw" formControlName="password" class="form-control default-input-field-size left-margin-2em" pattern="/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/"
+    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+    <span toggle="#password-field">
+    <button class="btn btn-primary" (click)="myFunction()" style="margin-left: -4%;
+    width: 54px;border-radius: 25px;background-color:#454545;border-color:#454545;">
+        <span style="color:#ffffff;">Hide</span></button>
+    </span>
+     
+     <!--<div [hidden]="myBlueForm.controls.password.valid || myBlueForm.controls.password.pristine" class="alertBox"        (?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}>
+        <div [hidden]="!myBlueForm.controls.password.hasError('required')">Required field.</div>
+        <!--<div [hidden]="!myBlueForm.controls.password.hasError('pattern')">
+        </div>
+      </div>-->
+      </div>
+
+      <div id="message" style="margin-left: 1%;">
+        <h3>Password Requirements</h3>
+        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+        <p id="number" class="invalid">A <b>number</b></p>
+        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+        <p id="specialChar" class="invalid">Must include a special character:<br>@!#$%^&*()+~./[]-</p>
+    </div>
+
+       <!--<div id="message">
+                <h3>Password Requirements</h3>
+                <p id="letter" class="invalid">At least 8 charcters</p>
+                <p id="capital" class="invalid">Must include an uppercase letter</p>
+                <p id="number" class="invalid">Must include a number</p>
+                <p id="length" class="invalid">Must include a special character:<br>@!#$%^&*()+~./[]-</p>
+            </div>-->
+      <div class="clearfix"></div>
+
+      <div class="row ">
+        <div class="col-md-12" style="margin-top: 2%;">
+         <input type="checkbox" checked><span>Yes, I wish to recieve information from Blue Cross Blue Shield of Massachusetts</span>
+        </div>
+      </div>
+       <div class="clearfix"></div>
+      <div class="row ">
+        <div class="col-md-12" style="margin-top: 2%;margin-left: 1%;color:#808080">
+         By clicking "Continue" I agree to the Blue Cross Blue Shield of Massachusetts Terms of Use and Confidentiality.
+        </div>
+      </div>
+       <div class="clearfix"></div>
+    </form>
+
+    <div class="col-md-12 col-sm-12 mT40 submit-cancel-margin" style="margin-top:2%;margin-left: -85%;">
+            <div class="col-md-2 col-sm-2 button-align padding-button-middle">
+                <button class="submit-cancel-button save-enable  confirm-button-margin" (click)="showHomePage(myBlueForm)">Continue</button>
+            </div>
+    </div>
+     <div class="clearfix"></div>
+    
+
+     <div class="row ">
+        <div class="col-md-12" style="margin-top: 2%;margin-left: 1%;color:#808080">
+         *Field is required.
+        </div>
+      </div>
+      <div class="borderline"></div>
+    <div class="clearfix"></div>
+
+
+
+</div>
+
+
+<!--<div class="footer">
+  <p>Footer</p>
+</div>-->
+
+<footer>
+<img id="logo" style="margin-top: 2%;" alt="BCBS MA Member Portal Home Link" class="transparentPNG" src="logo-footer.png" border="none">
+
+  <p class="text">Blue Cross Blue Shield of Massachusetts is an Independent Licensee of the Blue Cross and Blue Shield Association.</p>
+  <p  class="text">® Registered Marks of the Blue Cross and Blue Shield Association.</p>
+  <p  class="text">© 2018 Blue Cross and Blue Shield of Massachusetts, Inc., and Blue Cross and Blue Shield of Massachusetts HMO Blue, Inc. </p>
+  <p  class="text">101 Huntington Avenue, Suite 1300, Boston, MA 02199-7611 | 800-262-BLUE (2583)</p>
+    
+    <div class="testClass" class="text">
+			<a href="" target="_blank" style="color:#808080;text-decoration:none;">Terms of Use, Privacy &amp; Security</a>
+			<span>&nbsp;|&nbsp;&nbsp;</span>
+			<a href="" target="_blank" style="color:#808080;text-decoration:none;">Accessibility</a>  			
+			<span>&nbsp;|&nbsp;&nbsp;</span>
+			
+				<a href="" style="color:#808080;text-decoration:none;">Site Map</a>
+			
+			<span>&nbsp;|&nbsp;&nbsp;</span>
+			<a href="" target="_blank" style="color:#808080;text-decoration:none;">Nondiscrimination &amp; Translation Resources</a>
+		</div>
+</footer>
+</div>
+
+<div *ngIf="isHome">
+<app-home></app-home>
+</div>

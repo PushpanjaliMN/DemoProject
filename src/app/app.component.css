@@ -1,0 +1,69 @@
+ #logoMyblue {
+    height: 32px;
+    width: auto;
+    /*margin: 0 5px 10px 0;*/
+    margin-left: 290%;
+}
+
+#logo{
+    height: 32px;
+    width: auto;
+    /*margin: 0 5px 10px 0;*/
+    margin-left: 260%;
+    margin-top: -17%;
+    float:left;
+}
+
+.header{
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 970px;
+    vertical-align: top;
+    
+}
+
+#banner {
+    width: 213px;
+    float: left;
+    height: 65px;
+}
+
+.borderline{
+    border-bottom: 4px solid #1d75bc;
+    padding-top: 50px;
+}
+
+
+@media all and (min-width: 992px) and (max-width: 1024px){
+    #logoMyblue{
+       margin-left: 290%; 
+    }
+
+    #logo{
+        margin-left: 260%;
+    }
+
+}
+
+
+@media all and (min-width: 768px) and (max-width: 992px){
+     #logoMyblue{
+       margin-left: 185%; 
+    }
+
+    #logo{
+        margin-left: 154%;
+    }
+}
+
+@media all and (min-width: 385px) and (max-width: 768px){
+    #logoMyblue{
+       margin-left: 82%; 
+    }
+
+    #logo{
+        margin-left: 52%;
+    }
+}
+
